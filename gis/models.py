@@ -1,5 +1,16 @@
 from django.db import models
 
+# class Photo(models.Model):
+
+#     """Photo Model Definition"""
+
+#     caption = models.CharField(max_length=50)
+#     file = models.ImageField(upload_to="gi_photos")
+#     gi = models.ForeignKey("Gi", related_name="photos", on_delete=models.CASCADE)
+
+#     def __str__(self):
+#         return self.caption
+
 
 class Gi(models.Model):
     class Priority(models.IntegerChoices):
@@ -21,8 +32,7 @@ class Gi(models.Model):
     brand = models.ForeignKey(
         "brands.Brand", related_name="gis", on_delete=models.CASCADE
     )
-    # TODO image
-
+    photo = models.ImageField(upload_to="gi_photos")
     link_store = models.URLField()
     price = models.IntegerField()
     priority = models.IntegerField(choices=Priority.choices, default=Priority.LOW)

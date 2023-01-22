@@ -10,6 +10,7 @@ class GiAdmin(admin.ModelAdmin):
     list_display = (
         "name",
         "brand",
+        "photo",
         "link_store",
         "price",
         "priority",

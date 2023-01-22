@@ -41,6 +41,7 @@ DJANGO_APPS = [
 
 PROJECT_APPS = [
     "brands.apps.BrandsConfig",
+    "gis.apps.GisConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS

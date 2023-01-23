@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-DJANGO_APPS = [
+SYSTEM_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,12 +40,16 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-PROJECT_APPS = [
+CUSTOM_APPS = [
     "brands.apps.BrandsConfig",
     "gis.apps.GisConfig",
 ]
 
-INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
+THIRD_PARTY_APPS = [
+    "rest_framework",
+]
+
+INSTALLED_APPS = SYSTEM_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

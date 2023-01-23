@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     path(
         "",
-        views.BrandViewSet.as_view(
+        views.GiViewSet.as_view(
             {
                 "get": "list",
                 "post": "create",
@@ -13,7 +13,7 @@ urlpatterns = [
     ),
     path(
         "<int:pk>",
-        views.BrandViewSet.as_view(
+        views.GiViewSet.as_view(
             {
                 "get": "retrieve",
                 "put": "partial_update",

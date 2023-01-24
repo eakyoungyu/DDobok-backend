@@ -4,6 +4,7 @@ set -o errexit
 
 pip install --upgrade pip
 echo "update poetry.lock"
+poetry lock
 poetry update
 poetry update --lock
 echo "before install poetry"

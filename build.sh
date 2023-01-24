@@ -4,7 +4,7 @@ set -o errexit
 
 pip install --upgrade pip
 poetry --version
-poetry self update 1.3.2
+poetry self update
 echo "before install poetry"
 poetry install
 pip install --force-reinstall -U setuptools

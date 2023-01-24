@@ -3,10 +3,8 @@
 set -o errexit
 
 pip install --upgrade pip
-echo "update poetry.lock"
-poetry lock
-poetry update
-poetry update --lock
+poetry --version
+poetry self update 1.3.2
 echo "before install poetry"
 poetry install
 pip install --force-reinstall -U setuptools

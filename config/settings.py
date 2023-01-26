@@ -53,6 +53,7 @@ CUSTOM_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
+    "django_filters",
     "corsheaders",
     "storages",
 ]
@@ -180,3 +181,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://seokyoungyou.github.io",
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"]
+}

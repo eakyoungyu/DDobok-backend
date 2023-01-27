@@ -182,6 +182,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://seokyoungyou.github.io",
 ]
 
+if not DEBUG:
+    CORS_ALLOWED_ORIGINS += os.environ.get("FRONTEND_WIFI_IP")
+
 REST_FRAMEWORK = {
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"]
 }

@@ -103,12 +103,24 @@ if DEBUG:
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-else:  # TODO change DATABASE to AWS RDS
-    DATABASES = {
-        "default": dj_database_url.config(
-            conn_max_age=600,
-        )
-    }
+else:
+    if os.environ.get("USE_AWS_RDS") == "TRUE":
+        DATABASES = {
+            "default": {
+                "ENGINE": "django.db.backends.postgresql",
+                "NAME": os.environ.get("AWS_RDS_NAME"),
+                "HOST": os.environ.get("AWS_RDS_HOST"),
+                "PORT": os.environ.get("AWS_RDS_PORT"),
+                "USER": os.environ.get("AWS_RDS_USER"),
+                "PASSWORD": os.environ.get("AWS_RDS_PASSWORD"),
+            }
+        }
+    else:
+        DATABASES = {
+            "default": dj_database_url.config(
+                conn_max_age=600,
+            )
+        }
 
 
 # Password validation

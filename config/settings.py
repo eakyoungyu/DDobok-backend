@@ -192,6 +192,7 @@ MEDIA_URL = "/media/"
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://seokyoungyou.github.io",
+    "https://ddobok.com",
 ]
 
 if not DEBUG:

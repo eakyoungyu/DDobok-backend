@@ -53,3 +53,9 @@
 | + BLUE: str      |
 | + BRIGHT: str    |
 | + DARK: str      |
+
+#### Relationships:
+
+- Gi ◆--> Priority (Gi has a Priority)
+- Gi ◆--> Color (Gi has a Color)
+- Brand --> Gi (Gi belongs to a Brand)

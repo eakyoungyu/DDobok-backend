@@ -10,6 +10,29 @@
 - **Django REST framework** for providing data to frontend
 - **AWS S3** for image storage
 ---
+
+## Rest API
+#### Brand
+GET /api/v1/brands: List every jiujitsu gi brand
+
+#### Gi
+GET /api/v1/gis/: List every jiujitsu gi (ordered by priority)
+- filters: color, price, priority
+- examples\
+GET /api/v1/gis/?color=Black\
+GET /api/v1/gis/?color=Black&color=White\
+GET /api/v1/gis/?min_price=100000&max_price=200000\
+GET /api/v1/gis/?color=Black&min_price=100000&max_price=200000
+  
+| Color |
+|-------|
+| Black |
+| White |
+| Blue |
+| Bright |
+| Dark |
+
+---
 ## Models
 #### Brand
 
